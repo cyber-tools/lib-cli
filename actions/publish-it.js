@@ -4,7 +4,7 @@ const getLoginInfo = require("@/scripts/get-login-info");
 const publishProcess = require("@/scripts/publish-process");
 
 
-(async function startPublish() {
+module.exports = async function startPublish() {
   try {
     const currentUser = await getLoginInfo();
     if (!currentUser) {
@@ -22,4 +22,4 @@ const publishProcess = require("@/scripts/publish-process");
   } catch (error) {
     throw error;
   };
-})();
+};

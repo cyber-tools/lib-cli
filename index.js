@@ -1,17 +1,20 @@
 #!/usr/bin/env node
-const path = require("path");
-const { addAlias } = require("module-alias");
+require("./utils/initial");
+const { program } = require("commander");
+const { version } = require("@/package.json");
 
-addAlias("@", path.resolve(__dirname, "./src/"));
+program
+  .usage("library command")
+  .version(version);
 
-process.on("uncaughtException", (error) => {
-  console.log(error);
-  process.exit(0);
-});
+program
+  .command("build")
+  .description("编译源代码")
+  .action(require("@/actions/build-source"));
 
-process.on("unhandledRejection", (error) => {
-  console.log(error);
-  process.exit(0);
-});
+program
+  .command("publish")
+  .description("发布到npm注册源")
+  .action(require("@/actions/publish-it"))
 
-require("./src/index");
+program.parse(process.argv);

@@ -3,7 +3,7 @@ const toast = require("@/utils/toast");
 const hasRemote = require("@/utils/hasRemote");
 const hasIgnoreFile = require("@/utils/hasIgnoreFile");
 
-const { version } = require("../../package.json");
+const { version } = require("@/package.json");
 
 
 module.exports = async () => {
