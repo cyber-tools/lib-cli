@@ -1,4 +1,4 @@
-var validate = require("validate-npm-package-name");
+const validate = require("validate-npm-package-name");
 const { name } = require("../../package.json");
 
 module.exports = async () => {

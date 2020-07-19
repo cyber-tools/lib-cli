@@ -5,13 +5,13 @@ const selectVersionType = require("@/scripts/select-version-type");
 const appendRemoteInfo = require("@/scripts/append-remote-info");
 
 const hasRemote = require("@/utils/hasRemote");
-const isPackageName = require("@/utils/is-package-name");
+const caniUseName = require("@/utils/caniuse-name");
 
 
 const { name } = require("../../package.json");
 
 module.exports = async () => {
-  if (!await isPackageName()) {
+  if (!await caniUseName()) {
     toast.warn(["包名", name, "不符合规范!"].join(""));
     process.exit(0);
   };
