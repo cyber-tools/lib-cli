@@ -1,5 +1,5 @@
 {
-  "name": "library-core",
+  "name": "lib-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,6 +28,6 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "bin": {
-    "library": "./index.js"
+    "lib": "./index.js"
   }
 }
