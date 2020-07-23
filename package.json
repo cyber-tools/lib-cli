@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "@cyber/lib-cli",
   "version": "2.0.2",
   "description": "",
