@@ -24,7 +24,7 @@ module.exports = async () => {
     const versionType = await selectVersionType();
     await versionCommit();
     await execa("npm", ["version", versionType], { stdio: "inherit" });
-    await execa("npm", ["publish"], { stdio: "inherit" });
+    await execa("npm", ["publish", "--access public"], { stdio: "inherit" });
     toast.succeed("发布成功!");
   } catch (error) {
     throw error;
