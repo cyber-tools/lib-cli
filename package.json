@@ -29,5 +29,9 @@
   },
   "bin": {
     "cyber-lib": "./index.js"
+  },
+  "repository": {
+    "type": "github.com",
+    "url": "https://github.com/cyber-worker/lib-cli"
   }
 }
