@@ -1,5 +1,5 @@
 {
-  "name": "@cyber/lib-cli",
+  "name": "@cyber-worker/lib-cli",
   "version": "2.1.3",
   "description": "",
   "main": "index.js",
@@ -29,6 +29,9 @@
   },
   "bin": {
     "cyber-lib": "./index.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "github.com",
