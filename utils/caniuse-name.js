@@ -9,8 +9,8 @@ module.exports = async () => {
     toast.start(["正在查询包名(", name, ")是否可用", "... ..."].join(""));
     const { validForNewPackages, validForOldPackages } = await validate(name);
     const isValidate = (validForNewPackages && validForOldPackages);
-    const isAvailable = await npmName(name);
-    if (isValidate && isAvailable) {
+    // const isAvailable = await npmName(name);
+    if (isValidate) {
       toast.succeed(["包名(", name, ")可用!"].join(""));
       return true;
     };
