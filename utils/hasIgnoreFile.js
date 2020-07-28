@@ -1,13 +1,12 @@
-const fs = require("fs");
 const path = require("path");
-const { promisify } = require("es6-promisify");
+const pathExists = require("path-exists");
 
 module.exports = async () => {
   try {
     const ignoreFilePath = path.resolve(process.cwd(), ".gitignore");
-    const stats = await promisify(fs.stat)(ignoreFilePath);
-    return stats.isFile();
+    const hasIgnoreFile = await pathExists(ignoreFilePath);
+    return hasIgnoreFile;
   } catch (error) {
-    return false;
+    throw error;
   }
 };
